@@ -13,6 +13,9 @@ namespace UddataPlusPlusMaria
     {
         public int id { get; set; }
         public string name { get; set; }
+        // man kan måske få en unik id i denne retning
+        //[DatabaseGeneratedOption identity]
+        //public class DatabaseGeneratedAttribute: Attribute 
     }
 
 }
