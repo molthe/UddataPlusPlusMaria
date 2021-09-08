@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 namespace UddataPlusPlusMaria
 {
 
-        // abstract to prevent this class from being instantiated
-        abstract class Person
-        {
-        }
-   
+    // abstract to prevent this class from being instantiated
+    // this class inherits subject
+    abstract class Person : Subject
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+
 }
