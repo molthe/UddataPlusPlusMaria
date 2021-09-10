@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UddataPlusPlusMaria
+namespace UddataPlusPlusMaria.Models
 {
     // sealed to prevent this class from being used as a base class
-    sealed class Student : Person
+    sealed class Teacher : Person
     {
-        public int grade {  get; set; }
-        public int warnings { get; set; }
+        public bool MemberOfTheCoffeeClub { get; set; }
     }
 }
