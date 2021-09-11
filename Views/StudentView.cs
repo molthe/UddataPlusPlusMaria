@@ -13,7 +13,7 @@ namespace UddataPlusPlusMaria.Views
         public Student AddStudent()
         {
             // Adds a student
-            Student student = new Student();
+            Student student = new();
             Console.WriteLine("*** ADD A NEW STUDENT *** ");
             // NAME
             Console.WriteLine("Student's name: ");
