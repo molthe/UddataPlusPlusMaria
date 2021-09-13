@@ -34,6 +34,7 @@ namespace UddataPlusPlusMaria.Views
                     AddANewStudentMenu();
                     break;
                 case "2":
+                    AddANewTeacherMenu();
                     break;
                 case "3":
                     // AddSubjects();
@@ -70,6 +71,22 @@ namespace UddataPlusPlusMaria.Views
                 stv.ShowStudent(student);
             }
             else Console.WriteLine("Something went wrong when we tried to add the student to the database!");
+        }
+
+        private static void AddANewTeacherMenu()
+        {
+            // instantiate the new teacher
+            TeacherView tcv = new TeacherView();
+            Teacher teacher = tcv.AddTeacher();
+            // insert the new student into the database
+            int? Id = TeacherCRUD.InsertTeacher(teacher);
+
+            if (Id != null)
+            {
+                teacher.PersonId = (int)Id;
+                tcv.ShowTeacher(teacher);
+            }
+            else Console.WriteLine("Something went wrong when we tried to add the teacher to the database!");
         }
     }
 }
