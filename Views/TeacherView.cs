@@ -59,6 +59,7 @@ namespace UddataPlusPlusMaria.Views
                 {
                     Console.WriteLine($"{descriptor.Name}:{descriptor.GetValue(teacher)}");
                 }
+                
             }
         }
     }

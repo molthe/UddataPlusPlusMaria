@@ -35,7 +35,6 @@ namespace UddataPlusPlusMaria.Controllers
                         cmd.Parameters.Add("@PersonName", SqlDbType.NVarChar).Value = teacher.PersonName;
                         cmd.Parameters.Add("@MemberOfTheCoffeeClub", SqlDbType.Int).Value = teacher.MemberOfTheCoffeeClub;
 
-                        Console.WriteLine(sql);
                         var Id = cmd.ExecuteScalar();
                         return (int?)Id;
                     }
@@ -46,6 +45,38 @@ namespace UddataPlusPlusMaria.Controllers
                     return null;
                 }
             }
+        }
+
+        public List<Teacher> Select()
+        {
+            List<Teacher> teacherList = new List<Teacher>();
+            string sql = $"SELECT Id, PersonName, MemberOfTheCoffeeClub FROM Teacher";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        teacherList.Add(
+                            new Teacher()
+                            {
+                                PersonId = (int)reader[0],
+                                PersonName = (string)reader[1],
+                                MemberOfTheCoffeeClub = (bool)reader[2],
+                            });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR:" + ex.GetType() + ex.Message);
+                    return null;
+                }
+            }
+            return teacherList;
         }
     }
 }

@@ -42,6 +42,7 @@ namespace UddataPlusPlusMaria.Views
                 case "4":
                     break;
                 case "5":
+                    ShowALLTeachersMenu();
                     break;
                 case "6":
                     break;
@@ -56,7 +57,8 @@ namespace UddataPlusPlusMaria.Views
                     break;
             }
         }
-
+        // this method calls the class StudentView and the method AddStudent to add a new student to the database
+        // it also shows the input, if it went well
         private static void AddANewStudentMenu()
         {
             // instantiate the new student
@@ -73,6 +75,8 @@ namespace UddataPlusPlusMaria.Views
             else Console.WriteLine("Something went wrong when we tried to add the student to the database!");
         }
 
+        // this method calls the class TeacherView and the method AddTeacher to add a new teacher to the database
+        // it also shows the input, if it went well
         private static void AddANewTeacherMenu()
         {
             // instantiate the new teacher
@@ -87,6 +91,15 @@ namespace UddataPlusPlusMaria.Views
                 tcv.ShowTeacher(teacher);
             }
             else Console.WriteLine("Something went wrong when we tried to add the teacher to the database!");
+        }
+        // this method calls the TeacherCRUD class and the method Select,
+        // together with the TeacherView class and the method ShowALLTeachers to output a list of all the teachers
+        private void ShowALLTeachersMenu()
+        {
+            TeacherCRUD sql = new TeacherCRUD();
+            List<Teacher> teacherList = sql.Select();
+            TeacherView tcv = new TeacherView();
+            tcv.ShowALLTeachers(teacherList);
         }
     }
 }

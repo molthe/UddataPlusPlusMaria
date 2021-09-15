@@ -14,7 +14,7 @@ namespace UddataPlusPlusMaria.Controllers
         // const string connectionString = "Data Source=.;Initial Catalog = BuhuZooDB; Integrated Security = True";
         // works at home
         const string connectionString = "Data Source = MARIA\\SQLEXPRESS;Initial Catalog = UddataPlusPlusMaria; Integrated Security = True";
-        
+
         // SQL - ADD A NEW STUDENT (INSERT)
         public static int? InsertStudent(Student student)
         {
@@ -33,7 +33,6 @@ namespace UddataPlusPlusMaria.Controllers
                         cmd.Parameters.Add("@Grade", SqlDbType.Int).Value = student.Grade;
                         cmd.Parameters.Add("@Warnings", SqlDbType.Int).Value = student.Warnings;
 
-                        Console.WriteLine(sql);
                         var Id = cmd.ExecuteScalar();
                         return (int?)Id;
                     }

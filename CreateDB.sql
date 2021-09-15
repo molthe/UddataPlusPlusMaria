@@ -20,7 +20,6 @@ Id INT IDENTITY(1,1) PRIMARY KEY,
 PersonName NVARCHAR(255),
 Grade INT,
 Warnings INT,
---Subjects NVARCHAR (255),
 )
 
 --Create new table TEACHER
