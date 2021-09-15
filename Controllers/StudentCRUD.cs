@@ -44,5 +44,38 @@ namespace UddataPlusPlusMaria.Controllers
                 }
             }
         }
+
+        public List<Student> Select()
+        {
+            List<Student> studentList = new List<Student>();
+            string sql = $"SELECT Id, PersonName, Grade, Warnings FROM Student";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        studentList.Add(
+                            new Student()
+                            {
+                                PersonId = (int)reader[0],
+                                PersonName = (string)reader[1],
+                                Grade = (int)reader[2],
+                                Warnings = (int)reader[3],
+                            });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR:" + ex.GetType() + ex.Message);
+                    return null;
+                }
+            }
+            return studentList;
+        }
     }
 }
