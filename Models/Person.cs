@@ -13,5 +13,4 @@ namespace UddataPlusPlusMaria.Models
         public int PersonId { get; set; }
         public string PersonName { get; set; }
     }
-
 }

@@ -17,7 +17,7 @@ namespace UddataPlusPlusMaria.Views
             Console.WriteLine("\n *** MAIN MENU *** \n\n" +
                 "1. Add a new student\n" +
                 "2. Add a new teacher\n" +
-                "3. Add a new subject\n" +
+                "3. Set subject and grade for a student\n" +
                 "4. Show all students\n" +
                 "5. Show all teachers\n" +
                 "6. Show all subjects\n" +
@@ -37,7 +37,7 @@ namespace UddataPlusPlusMaria.Views
                     AddANewTeacherMenu();
                     break;
                 case "3":
-                    // AddSubjects();
+                    SetSubjectAndGradeForStudentMenu();
                     break;
                 case "4":
                     ShowALLStudentsMenu();
@@ -92,6 +92,14 @@ namespace UddataPlusPlusMaria.Views
                 tcv.ShowTeacher(teacher);
             }
             else Console.WriteLine("Something went wrong when we tried to add the teacher to the database!");
+        }
+        // this method sets a subject and a grade for a student
+        private void SetSubjectAndGradeForStudentMenu()
+        {
+            SubjectCRUD sql = new SubjectCRUD();
+            List<Subject> SubjectList = sql.Select();
+            StudentView stv = new Studentview();
+            stv.SetSubjectAndGradeForStudent(student);
         }
 
         // this method calls the StudentCRUD class and the method Select,

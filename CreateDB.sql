@@ -29,5 +29,15 @@ PersonName NVARCHAR(255),
 MemberOfTheCoffeeClub BIT,
 )
 
+-- Create new table SUBJECT 
+CREATE TABLE Subject(
+Id INT IDENTITY (1,1) PRIMARY KEY,
+SubjectName NVARCHAR (255),
+)
+
+-- Create new bridge table STUDENTSUBJECT
+
+-- Create new bridge table TEACHERSUBJECT
 SELECT * FROM Student
 SELECT * FROM Teacher
+SELECT * FROM SubjectName

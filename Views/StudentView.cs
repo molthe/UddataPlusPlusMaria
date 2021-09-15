@@ -10,6 +10,7 @@ namespace UddataPlusPlusMaria.Views
 {
     class StudentView
     {
+        // this method allows the user to add a new student
         public Student AddStudent()
         {
             // Adds a student
@@ -55,28 +56,28 @@ namespace UddataPlusPlusMaria.Views
 
 
 
-        //public Student AddSubjects()
-        //{
+            //public Student AddSubjectAndGrade()
+            //{
 
 
-        //}
-        // GetSubject(student);
-        //public static void GetSubject(Student str)
-        //{
-        //    // GET THE SUBJECT
-        //    foreach (var subjectType in Enum.GetValues(typeof(Subject.SubjectType)))
-        //    {
-        //        Console.WriteLine((int)subjectType + " " + subjectType.ToString());
-        //    }
-        //    Console.WriteLine("SubjectType : ");
+            //}
+            //GetSubject(student);
+            //public static void GetSubject(Student str)
+            //{
+            //    // GET THE SUBJECT
+            //    foreach (var subjectType in Enum.GetValues(typeof(Subject.SubjectType)))
+            //    {
+            //        Console.WriteLine((int)subjectType + " " + subjectType.ToString());
+            //    }
+            //    Console.WriteLine("SubjectType : ");
 
-        //    Subject.SubjectType p = new Subject.SubjectType();
-        //    while (!Enum.TryParse(Console.ReadLine(), out p))
-        //    {
-        //        Console.WriteLine("Wrong input, try again...");
-        //    }
-        //    Subject.SubjectType(str) = p;
-        //    Console.WriteLine(str.SubjectType);
-        //}
+            //    Subject.SubjectType p = new Subject.SubjectType();
+            //    while (!Enum.TryParse(Console.ReadLine(), out p))
+            //    {
+            //        Console.WriteLine("Wrong input, try again...");
+            //    }
+            //    Subject.SubjectType(str) = p;
+            //    Console.WriteLine(str.SubjectType);
+            //}
     }
 }
