@@ -60,7 +60,7 @@ namespace UddataPlusPlusMaria.Controllers
                             new Subject()
                             {
                                 SubjectID = (int)reader[0],
-                                Subject.SubjectName = (Subject.SubjectName)Enum.Parse(typeof(Subject.SubjectName), reader[1].ToString()),
+                              //  Subject.SubjectName = (Subject.SubjectName)Enum.Parse(typeof(Subject.SubjectName), reader[1].ToString()),
                             });
                     }
                 }
